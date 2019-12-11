@@ -184,3 +184,7 @@ We talked about route separation. Using Express.Router() and putting each resour
 Take a look at (but do not use!) this repo to see how Express and MANY of the other node packages you've used are actually included in this popular starter code.
 
 https://github.com/sahat/hackathon-starter
+
+
+why no put and delete in tweeter?
+is this code things that students will be familiar with 
