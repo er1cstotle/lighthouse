@@ -30,6 +30,7 @@ module.exports = function () {
   // DELETE means deletion
   router.delete('/:quoteID', function(req, res, next) {
     // Do some logic to delete the quote
+    
     res.redirect('/quotes')
   });
   
