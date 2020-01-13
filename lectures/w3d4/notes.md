@@ -9,8 +9,6 @@
 - Security & Privacy: secret keys shouldn't be in the source code
 - Web Address? It's not running on localhost:8080
 - HTTP => HTTPS
-- UX is subpar (form errors, etc.)
-- Automated Testing!
 - Not just GET and POST, but also other HTTP methods/verbs
 
 ### Things that TinyApp does which ARE Real World:
@@ -154,15 +152,3 @@ GraphQL is an open-source data query and manipulation language for APIs, and a r
 - Symphony
 
 
-## References
-
-Interesting links
-About REST and naming convention : https://restfulapi.net/resource-naming/
-Express modular routing (end of document) : http://expressjs.com/en/guide/routing.html#routing
-Method override : https://www.npmjs.com/package/method-override
-Express middleware : https://expressjs.com/en/guide/using-middleware.html
-JSON APIs responses : https://jsonapi.org/examples
-WordPress REST API : https://developer.wordpress.org/rest-api/
-https://restfulapi.net/
-Video: https://thoughtbot.com/upcase/videos/rest
-Reading: https://codewords.recurse.com/issues/five/what-restful-actually-means

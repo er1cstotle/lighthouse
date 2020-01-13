@@ -4,6 +4,9 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+const postRoutes = require('./routes/posts')
+const userRoutes = require('./routes/users')
+
 const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
@@ -16,31 +19,27 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(cookieParser());
 
+const userDatabase = {
+  1: {
+    name: 'eric',
+    email: 'eric@gmail.com'
+  }
+}
 
-
-
-
-
-
-
-
-app.get('/quotes', function(req, res, next) {
-  res.render('quotes', { title: 'Express' });
+// Authentication middleware
+app.use((req, res, next) => {
+  const userID = req.cookies['user_id']
+  const user = userDatabase[userID]
+  req.user = user
+  next()
 });
 
-app.get('/users', function(req, res, next) {
-  res.send('respond with a resource');
+app.use('/posts', postRoutes)
+
+app.use((req, res, next) => {
 });
 
-
-
-
-
-
-
-
-
-
+app.use('/users', userRoutes)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
