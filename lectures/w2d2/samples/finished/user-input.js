@@ -11,7 +11,3 @@ stdin.on('data', (data) => {
 
   console.log(data);
 });
-
-stdin.on('end', () => {
- process.stdout.write('end');
-});

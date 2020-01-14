@@ -1,6 +1,7 @@
 # Intro 5min 
 - My backstory 
-- Surrender to the process
+
+- me llamo and jump to pass. the rules change as you progress. but in order to progress sometimes you need to ignore certain details and allow yourself to master the skills at a particular level before progressing
 
 # Review 20m
 - What is a function
@@ -9,12 +10,20 @@
 
 - What is the difference between Node and Javascript?
 
-# Async vs Sync 20m
-- I/O
+# Async vs Sync 30m
+- Restaurant example. Mcdonalds
+- Blocking vs Non-Blocking
+- set timeout and
+
 - Threading. Js is single threaded
   - one thing can happen at a time.
-- Blocking vs Non-Blocking
+- I/O
 - Event loop - you will cover this in depth later this week
+
+# Break 10m
+
+# sleep sort 5 mins
+- look at example
 
 # FS 10m
 - built in packages
@@ -24,14 +33,11 @@
 - revisit
 - how to access other files on the system
 
-# Break 10m
-
-# Guess the output 20mins
-- look at 3 async code examples
-
-# user input 30m
+# user input 15m
 - events / listeners
 - stdin
+
+surrender to the process
 
 
 
