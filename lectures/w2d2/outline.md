@@ -4,8 +4,8 @@
 
 # Review 20m
 - What is a function
-- What is a higher order function?
 - What is a callback?
+- What is a higher order function?
 
 - What is the difference between Node and Javascript?
 
@@ -29,7 +29,7 @@
 # Guess the output 20mins
 - look at 3 async code examples
 
-# Restaurant code sample 30m
+# user input 30m
 - events / listeners
 - stdin
 
