@@ -1,26 +1,32 @@
+const id = setInterval(() => {
+  console.log('hi');
+  
+}, 1000);
+
+clearInterval(id)
+
+
 // part 1 
 
-// console.log('BEFORE CALL');
+console.log('BEFORE CALL');
 
-// setTimeout(() => console.log('INSIDE CALL'), 1000);
+setTimeout(() => console.log('INSIDE CALL'), 1000);
 
-// console.log('AFTER CALL');
+console.log('AFTER CALL');
 
-// // part 2 
+// part 2 
+let x = 1;
+console.log('BEFORE CALL: ', x);
 
-// let x = 1;
-// console.log('BEFORE CALL: ', x);
+setTimeout(() => {
+  x = 2;
+  console.log('INSIDE CALL: ', x);
+}, 1000);
 
-// setTimeout(() => {
-//   x = 2;
-//   console.log('INSIDE CALL: ', x);
-// }, 1000);
-
-// console.log('AFTER CALL', x);
+console.log('AFTER CALL', x);
 
 
 // part 3
-
 const higherOrderFunc = function(callback) {
   // get some data from somewhere
   let data = 'hello world'
@@ -31,7 +37,7 @@ const higherOrderFunc = function(callback) {
     callback(data);
     // this return does nothing
     return data;
-  });
+  }, 1000);
 
   console.log('AFTER TIMEOUT CALL');
   // this provides a return value for the main call

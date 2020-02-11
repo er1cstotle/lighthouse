@@ -2,23 +2,13 @@
 
 # Review 20m
 
-# Async vs Sync 30m
+# Async vs Sync 20m
 
-Javascript: programming language, dynamic
-Node: interpreter, so that it can be run on the server
-
-I/O
-
-- node handles I/O async
-- This is the thing that node is really really really good at
-
-
-
-
+# event loop 10m
 
 # Break 10m
 
-# Some async examples 5 mins
+# What are some async things
 
 # Node FS 10m
 
