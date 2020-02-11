@@ -1,39 +1,23 @@
 import React, {useState, useEffect} from 'react';
-import Axios from "axios";
 import './App.css';
 
-
-function App() {
-  const [message, setMessage] = useState('Hello World')
-  
-  useEffect(() => {
-    document.title = 'blahhh'
-  })
+function Rectangle() {
+  const [length, setLength] = useState(10)
+  const [width, setWidth] = useState(5)
 
   useEffect(() => {
-    Axios.get('/data-1').then((res) => {
-      console.log(res.data);
-    })
-  })
-  
-  useEffect(() => {
-    document.getElementById("message").innerHTML = "Paragraph changed!";
-  })
-  
-  // useEffect(() => {
-  //   const id = setInterval(() => {
-  //     setCount(count + 1);
-  //   }, 1000);
-  //   return () => clearInterval(id);
-  // }, [count]);
-
+    setTimeout(() => {
+      debugger
+      setLength(9)
+    }, 1000);
+  }, [])
 
 
   return (
-    <div className="App">
-      <p id="message">{message}</p>
+    <div className="Rectangle">
+      <p>length</p>
     </div>
   );
 }
 
-export default App;
+export default Rectangle;

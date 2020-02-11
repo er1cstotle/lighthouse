@@ -44,7 +44,6 @@ Any operation which modifies the state of the computer or which interacts with t
 - you can and should use multiple effect hooks to group logical operations together
 - it accepts a dependency array as the second argument that lets you specify when you want the effect to run
 
-
 gotcha
 - be careful you don't get trapped in an infinite loop
 
@@ -67,11 +66,15 @@ remember: all functions within a component have the props, state, and surroundin
 
 # SPA's
 - You need to run 2 apps. One `server` and one `client`
-- It is very common to creata a JSON api for your server
+- It is very common to create a JSON api for your server
 - we use a library called Axios to make our ajax requests
 
 # Compute data from existing state
 - derive state from existing props and state whenever possible. We want to store the minimum amount of state possible
 
-http://hackflow.com/blog/2015/03/08/boiling-react-down-to-few-lines-in-jquery/
+How does react compare to Jquery: http://hackflow.com/blog/2015/03/08/boiling-react-down-to-few-lines-in-jquery/
 https://reactjs.org/docs/thinking-in-react.html
+
+In-depth blog post on useEffect: https://overreacted.io/a-complete-guide-to-useeffect/
+
+Get thinking in a react mind set: https://reactjs.org/docs/thinking-in-react.html

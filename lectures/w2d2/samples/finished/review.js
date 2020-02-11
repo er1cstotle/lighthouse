@@ -1,25 +1,25 @@
 // Functions
 
 // function declaration
-function identityFunction(message) {
-  return (message);
+function add(a, b) {
+  return a + b;
 }
 
 // function expression 
-const identityFunction = function(message) {
-  return message;
+const add = function(a, b) {
+  return a + b;
 }
 
 // arrow function review
-const identityFunction = function(message) {
-  return message;
+const add = function(a, b) {
+  return a + b;
 }
 
-const identityFunction = (message) => {
-  return message;
+const add = (a, b) => {
+  return a + b;
 }
 
-const identityFunction = message => message;
+const add = (a, b) => a + b;
 
 
 // What is a callback
@@ -38,7 +38,6 @@ const map = function(array, cb) {
 map([1,2,3], (x) => x + 1)
 
 // What is a higher order function
-
 const addifier = (x) => {
   return (y) => {
     return x + y

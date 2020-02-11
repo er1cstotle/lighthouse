@@ -23,7 +23,6 @@ Answer:
 ### What is the difference between Node and Javascript?
 
 javascript is an language
-
 node is a runtime environment for javascript
 
 
@@ -43,23 +42,16 @@ Restaurant example
 - synchronous code is blocking
 - asynchronous code is non-blocking
 
-if you are curious on the topic you can do further reading here.
-https://nodejs.org/de/docs/guides/blocking-vs-non-blocking/
 
 ### JS examples
 
 `SetTimeout()` and  `SetInterval()`
-
-**Settimeout**: and SetInterval are functions that force a wait / force async behavior.
-
-**SetInterval**: specifies a function to be called repeatedly given the specified interval.
 
 both of these functions are asyncronous
 - they throw their callbacks in the event queue
 - they are not precise. They will execute the callback roughly after the specified time.
 - they both use the callback pattern to implement the async behaviour. 
 - it is important to note that NOT all callbacks are async.
-
 
 ### I/O
 
@@ -70,7 +62,7 @@ both of these functions are asyncronous
 
 - This is not a topic for today but I thought it important to touch on quickly
 - The event loop is what enables Javascript's asynchronous behavior
-- The loop pulls things out of the event queue and runs the task then goes back to the queue etc...
+- The loop pulls things out of the event queue and runs the task then goes back to the queue and runs the next task etc...
 
 
 # 3. FS 10m
@@ -88,4 +80,3 @@ quick notes:
 - in our final code example we looked at how we can write a program that waits for input from the user
 - we saw that the event listener is async
 
-<!-- add links to git repo -->

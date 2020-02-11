@@ -1,44 +1,51 @@
 // part 1 
 
-console.log('BEFORE CALL');
+// console.log('BEFORE CALL');
 
-setTimeout(() => console.log('INSIDE CALL'), 1000);
+// setTimeout(() => console.log('INSIDE CALL'), 1000);
 
-console.log('AFTER CALL');
+// console.log('AFTER CALL');
 
-// part 2 
+// // part 2 
 
-let x = 1;
-console.log('BEFORE CALL: ', x);
+// let x = 1;
+// console.log('BEFORE CALL: ', x);
 
-setTimeout(() => {
-  x = 2;
-  console.log('INSIDE CALL: ', x);
-}, 1000);
+// setTimeout(() => {
+//   x = 2;
+//   console.log('INSIDE CALL: ', x);
+// }, 1000);
 
-console.log('AFTER CALL', x);
+// console.log('AFTER CALL', x);
 
 
 // part 3
 
 const higherOrderFunc = function(callback) {
-  const data = 'hello world'
+  // get some data from somewhere
+  let data = 'hello world'
 
   console.log('BEFORE TIMEOUT CALL');
   setTimeout(() => {
-    data = "goodbye world";
-    callback();
-    // as per question 3, what if we return data below? Like so:
-    // return data;
+    data = 'hola mundo'
+    callback(data);
+    // this return does nothing
+    return data;
   });
 
   console.log('AFTER TIMEOUT CALL');
-  // okay, if not in the setTimeout callback above, as per question 3, what if we return data here? So that result below is set to the data. Like so:
-  // return data;
+  // this provides a return value for the main call
+  return data;
 }
 
 console.log('BEFORE MAIN CALL');
-const result = higherOrderFunc(() => {
+const result = higherOrderFunc((data) => {
   console.log('INSIDE CALLBACK');
+  console.log(`DATA: ${data}`);  
 })
+
+
 console.log('AFTER MAIN CALL');
+console.log(result);
+
+
