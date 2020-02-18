@@ -9,6 +9,14 @@
 # Break 10m
 
 # What are some async things
+- interacting with the filesystem 
+- talking to a database 
+- fetching data from an api 
+- timeouts 
+
+- respond to "events"
+- animations 
+
 
 # Node FS 10m
 

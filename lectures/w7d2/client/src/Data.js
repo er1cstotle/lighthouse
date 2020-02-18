@@ -6,20 +6,21 @@ import './App.css';
 
 
 function App() {
-  const [message, setMessage] = useState('')
-
   useEffect(() => {
     axios.get('/data-1').then((res) => {
       console.log(res);
-      setMessage(res.data.message)
     })
 
   }, [])
 
+  const incrementCount = () => {
+    setCount(count + 1)
+  }
 
   return (
     <div className="App">
-      <p>{message}</p>
+      <p>{count}</p>
+      <button onClick={incrementCount}>Increment</button>
     </div>
   );
 }

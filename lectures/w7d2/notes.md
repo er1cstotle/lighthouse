@@ -16,19 +16,15 @@ There are 2 rules when using hooks
 Rule 1: Don’t call Hooks inside loops, conditions, or nested functions. Instead, always use Hooks at the top level of your React function.
 Rule 2: Only Call Hooks from React Functions.
 
-# React Lifecycle
-- There are three phases. Mounting, Updating, Unmounting
-![lifecycle](https://miro.medium.com/max/3348/1*cEWErpe-oY-_S1dOaT1NtA.jpeg)
-
 # Pure functions
 - A pure function is a function that has no side-effects and will produce the same return value given the same arguments
-- We want our functional react components to be pure.
+- We want our functional react components to be pure with respect to their own props.
+
 ``` js
 const pure = (x, y) => {
   return x + y
 }
 ```
-
 # Side Effects
 Any operation which modifies the state of the computer or which interacts with the outside world is said to have a side effect
 
@@ -37,6 +33,8 @@ Any operation which modifies the state of the computer or which interacts with t
 - I/O
 - modifying the dom directly
 - setting up listeners
+- setting up socket connections
+- setting timers or intervals
 
 # UseEffect
 - React provides a hook for us to use when dealing with side effects in functional components
@@ -46,6 +44,11 @@ Any operation which modifies the state of the computer or which interacts with t
 
 gotcha
 - be careful you don't get trapped in an infinite loop
+
+
+# Render + Effects + Cleanup
+![effects](https://www.bram.us/wordpress/wp-content/uploads/2019/03/hook-flow.png)
+
 
 Here's a simple example 
 ```
