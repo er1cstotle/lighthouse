@@ -33,6 +33,7 @@ app.use(function (req, res, next) {
   const userID = req.cookies.userID
   // do some logic to get a user by their id from the database
   // lets say it returns {email: 'eric@gmail.com', age: '24'}
+  
   req.user = {id: 1, email: 'eric@gmail.com', age: '24' }
   
   next();

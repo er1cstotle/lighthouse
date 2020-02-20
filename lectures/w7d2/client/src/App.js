@@ -1,27 +1,20 @@
 import React, {useState, useEffect} from 'react';
-import axios from "axios";
-
 import './App.css';
 
+import axios from "axios";
 
 
-function App() {
-  const [message, setMessage] = useState('')
+function Rectangle() {
+  const [length, setLength] = useState(10)
+  const [width, setWidth] = useState(5)
 
-  useEffect(() => {
-    axios.get('/data-1').then((res) => {
-      console.log(res);
-      setMessage(res.data.message)
-    })
-
-  }, [])
-
+  const calculateArea = () => length * width
 
   return (
-    <div className="App">
-      <p>{message}</p>
+    <div className="Rectangle">
+      <p>{calculateArea()}</p>
     </div>
   );
 }
 
-export default App;
+export default Rectangle;

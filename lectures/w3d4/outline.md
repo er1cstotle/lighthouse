@@ -22,29 +22,27 @@
 - what does res.redirect() do?
 - what does res.send() do?
 
-- Go through an in-depth example of that cycle.
-
 # REST (30min)
+- tiny app routes
+
+- Restful architecture???
 - What does it stand for?
 - what does that mean?
 - What is a resource?
-
-- how would we build hackernews
 
 - can you drive on the wrong side of the road?
 - anyone watch russian dash cams?
 
 - can I build my whole api with DELETE?
-
 - What formats
+- how would we build a blog
+
+- they've used cat apis
+- Show that server rendered apps respond with html and json apis respond with json
 
 ### break (5m)
 
 # REST continued (30mins)
-- they've used cat apis
-- Show that server rendered apps respond with html and json apis respond with json
-
-- if we rebuild hackernews what would our endpoints look like?
 
 # Middleware review and common middleware (15min) (can drop)
 
@@ -53,7 +51,10 @@
 - Show middleware diagram, emphasize (the same req object gets passed to each subsequent middleware)
 - Is order important for middlewares?
 
+- what happens if we don't call next()
+
 - quickly build user auth middleware
+- router level middleware
 
 # Convert single server.js file into a more realistic app (10min) (can drop)
 - app.use vs app.use(router)

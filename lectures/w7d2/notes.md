@@ -79,5 +79,4 @@ How does react compare to Jquery: http://hackflow.com/blog/2015/03/08/boiling-re
 https://reactjs.org/docs/thinking-in-react.html
 
 In-depth blog post on useEffect: https://overreacted.io/a-complete-guide-to-useeffect/
-
 Get thinking in a react mind set: https://reactjs.org/docs/thinking-in-react.html

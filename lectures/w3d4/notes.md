@@ -48,40 +48,6 @@
 - status code
 - headers (set-cookie, format etc)
 
-### What happens when a browser makes a request to the server
-
-#### GET
-
-1. User navigates to https://news.ycombinator.com (by typing the URL in the navbar)
-2. Browser makes makes a GET request to https://news.ycombinator.com
-3. Express gets the request and needs to decide which route to invoke (uses the URL/path and verb/method)
-4. Express calls ONE of our MANY route handlers by CALLING that callback function. It passes in 2 things (request object, and response object)
-5. Our handler code/function will render the form using EJS
-6. res.render('articles', { templateVars });
-7. Express/EJS will read the .ejs file from disk
-8. Any ejs tags (<% %>) are interpreted 
-9. Result is a string of HTML from the EJS file
-10. Express will use http to send the response data/headers/etc that we set down as a response
-11. Browser receives the RESPONSE (200)
-12. Parses and renders the HTML
-13. Downloads other dependencies (links to CSS, JS, images, videos) 
-
-#### POST
-
-1. User fills out the form for a new article and hits submit
-2. Browser looks at the form details (method and action attributes)
-3. Browser uses those 2 things to construct a request (POST to /articles)
-4. All the form fields are sent up as an encoded string (form url encoding) (text=cool&author=eric)
-5. Express receives the POST request with the form body/data
-6. BodyParser takes that form data string above and turns it into a nice object for us to easily access that data: {text: "cool", author: "eric"}
-8. Express executes our callback function (handler) for the post request
-9. Our code is able to access the form data using req.body
-10. Save the data (insert into a "database")
-11. respond using res.redirect("/articles") which sends back a redirect response (302, Location: /articles)
-12. Browser sees the 302 and looks for Location header in the response and performs a GET request to that location (/articles).
-13. Another request is made by the browser (following the redirect)
-14. Again: Goes to Express Routing -> Express Middleware -> Our Callback Code -> EJS -> HTML -> Browser
-
 # REST
 
 - REST is Representational State Transfer
@@ -123,9 +89,9 @@ You may need to access a nested resources. For example, you need to create a new
 
 - nothing you haven't seen before
 - we built an authentication middleware (a very common middleware in real world servers)
+- we used some ROUTER level middlewares
 
 # Code Separation
-
 
 We talked about route separation. Using Express.Router() and putting each resource into its own file (eg: routes/articles.js and routes/comments.js).
 

@@ -19,27 +19,20 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(cookieParser());
 
-const userDatabase = {
-  1: {
-    name: 'eric',
-    email: 'eric@gmail.com'
-  }
-}
 
-// Authentication middleware
-app.use((req, res, next) => {
-  const userID = req.cookies['user_id']
-  const user = userDatabase[userID]
-  req.user = user
-  next()
-});
 
-app.use('/posts', postRoutes)
 
-app.use((req, res, next) => {
-});
 
-app.use('/users', userRoutes)
+
+app.get('/posts', function(req, res) {
+  res.send('posts!')
+})
+
+
+
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
