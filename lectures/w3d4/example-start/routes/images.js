@@ -4,11 +4,11 @@ const router = express.Router();
 router.get('/', function(req, res) {
   console.log('inside the router.get');
   
-  res.send('posts!')
+  res.send('images!')
 });
 
 router.get('/:id', function(req, res) {
-  res.send('single post!')
+  res.send('single image!')
 });
 
 

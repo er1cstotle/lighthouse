@@ -22,8 +22,8 @@
 # HTTP Review
 
 - HTTP has a request / response cycle
-- HTTP is stateless
-- There is a clear separation between the client and the server. A client can make a request to a server. But not visa verse
+- HTTP is stateless. Each request response cycle happens in isolation of one another
+- There is a clear separation between the client and the server. A client can make a request to a server. But not visa versa
 
 ### Clients
 
@@ -91,10 +91,11 @@ You may need to access a nested resources. For example, you need to create a new
 - we built an authentication middleware (a very common middleware in real world servers)
 - we used some ROUTER level middlewares
 
+![middleware-diagram](https://cdn-images-1.medium.com/max/1600/0*8HIzvtX-DA3C26uv.png)
+
 # Code Separation
 
 We talked about route separation. Using Express.Router() and putting each resource into its own file (eg: routes/articles.js and routes/comments.js).
-
 
 ### REST alternatives
 
@@ -118,3 +119,7 @@ GraphQL is an open-source data query and manipulation language for APIs, and a r
 - Symphony
 
 
+https://expressjs.com/en/guide/using-middleware.html
+https://expressjs.com/en/guide/using-middleware.html#middleware.router
+
+https://restfulapi.net/rest-api-design-tutorial-with-example/

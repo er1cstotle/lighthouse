@@ -4,19 +4,25 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const postRoutes = require('./routes/posts')
-const userRoutes = require('./routes/users')
+const postsRoutes = require('./routes/posts')
+const imagesRoutes = require('./routes/images')
 
 const app = express();
+
+const database = {
+  users: {
+    1: {email: 'eric@gmail.com'}
+  }
+}
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
 app.use(cookieParser());
 
 
@@ -24,14 +30,8 @@ app.use(cookieParser());
 
 
 
-app.get('/posts', function(req, res) {
-  res.send('posts!')
-})
-
-
-
-
-
+app.use('/posts', postsRoutes)
+app.use('/images', imagesRoutes)
 
 
 // catch 404 and forward to error handler

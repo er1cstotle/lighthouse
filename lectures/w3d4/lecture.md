@@ -1,103 +1,109 @@
-# Real world HTTP Servers
+# Real World HTTP servers 
 
-RTFM
+## Tiny app vs the World
 
-# HTTP
+#### what about tiny app is totally legit
+- User authentication system
+- hashed passwords / user security 
+- LOTS of bugs
+- GET and POST requests
+  - Get for retrieving data and Post for sending data
+- Testing 
+- Route handling in general 
+- Encrypted cookies
+- Persistent data *
+- Templating
+- Express, Ejs, Npm
 
-- hyper text transfer protocol
-- Way for clients and servers to talk to each other
-- ssh
+#### things that are not so legit
 
-### STATELESS
+- No real database 
+- Not hosted, we are just running on localhost
+- have only run the code in a local environment... so we arent sure it is even deployable
+- no ssl or security certificates
+- All routes are in one giant file
+- Database redundancy or backups
+- We are only using get and post
 
-- requests don't know about previous requests or requests coming after
+## HTTP Review 
 
+# what does it mean to be stateless
+- No record of the transaction, only send data to end points, connection only exists within a request response cycle
 
-## Requests
+#### What makes up a request
 
-- PATH/url /articles
-- Action/verb GET/POST/PUT/DELETE
-- headers(cookies,  cache)
-- data
- - form data
+GET
+- Method + Path
+- Http headers
+- cookies
+- params and query params/
 
-## Response 
-- body/data (json, html ,error)
-- status code
-- headers (set-cookies)
+Post
 
+- Body 
+- Formdata
 
-### Request response cycle 
+#### what makes up a response 
 
-server has to be alive 
+- payload, if its html... the browser know how to display and render it 
+- headers (set-cookie)
+- status code, 404 not found
 
+## REST 
 
-1. enter url in browser bar
-2. browser does a GET request to the specified path
-3. express server gets the incoming request 
-4. run through middlewares
-5. match paths decide which route to go to and run the handler ***
-6. fetch data (article/urls)
-7. res.render an ejs view
-8. ejs parse and executes and then generates some html
-9. send html back to the client
-10. checks status code (content html)
-11. loads html into the page
-12. load separate assets.
+- Representational State Transfer
 
+GET
+POST
+PUT
+DELETE
 
-### Tiny app vs the Real world
-
-What are some real/important things that tiny app is missing
-
-- database
-- remote server
-- web address
-- network management (load balancers)
-- advanced error logging 
-- security - https 
-- GET/POSTs what about other methods
-- All our code is in 1 file
-
-### things that are legit 
-- user and hashed/salted passwords
-- encrypted cookies
-- Using a totally legit stack 
-- 404s
-
-# REST
-- Its a convention of sorts that guides us on how to structure our server routes
-- Ruby on rails adopted in version 2. 
-
-- Representational state transfer
-
-
-### resource 
+#### Current tiny app
 
 GET /urls
-GET /urls/new
+GET /urls/:id
 POST /urls
-GET /urls/:url-id
-GET /urls/:url-id/edit
-PUT /urls/:url-id
-DELETE /urls/:url-id
+POST /urls/:id/edit(update)
+POST /urls/:id/delete
 
-GET /articles/:article-id/comments/:comment-id
+#### restful tinyapp
 
-
-## Formats
-
-- html, json, xml
-
-
-
-
-
-
+<!-- get collection -->
+GET /urls
+<!-- get single entity -->
+GET /urls/:id
+<!-- Add and new entity to our collection -->
+POST /urls
+<!-- updating a single entity -->
+PUT /urls/:id
+<!-- deleting a single entity -->
+DELETE /urls/:id
 
 
 
- status codes,
+<!-- list all comments for a post -->
+GET /posts/:id/comments
+
+GET /comments
+<!-- get a single comment on a post -->
+GET /posts/:postID/comments/:commentID
+POST /posts/:postID/comments/
+
+PUT /posts/:postID/comments/:commentID
+DELETE /posts/:postID/comments/:commentID
 
 
 
+
+
+
+
+
+
+
+### break 
+
+## Middleware review and common middleware
+## Convert single server.js file into a more realistic app 
+## Alternatives to Express 
+## Alternatives to Rest 
