@@ -1,69 +1,62 @@
-// let x = 5
+// BAD
+let x = 5 
 
-// const increaseX = () => {
-//     x++
-//     return x
-// }
+const increment = () => {
+  x++
+  return x
+}
+ 
+const decrement = (x) => {
+  x--
+  return x
+}
 
-// const decreaseX = () => {
-//     x--
-//     return x
-// }
+console.log(increment() + decrement());
+console.log(decrement() + increment());
 
-// console.log(decreaseX())
-// console.log(decreaseX())
-// console.log(decreaseX())
-// console.log(decreaseX())
-// console.log(decreaseX())
-// console.log(decreaseX())
-// console.log(decreaseX())
-// console.log(decreaseX())
+// a + b !== b + a
 
-// console.log(increaseX() + decreaseX());
+const user = {
+  email: 'eric@gmail.com',
+  friends: [1,2,3,4,5]
+}
 
-// let user = {
-//   email: 'eric@gmail.com'
-// }
+const changeEmail = (user) => {
+  const newObj = {...user}
 
-// console.log(user);
+  newObj.email = 'not-eric@gmail.com'
+  return newObj
+}
 
-// const changeEmail = (user) => {
-//   user.email = 'not-eric@gmail.com'
-// }
+const addFriend = (user) => {
+  // spread does not deep clone
+  const newObj = {
+    ...user,
+    friends: [...user.friends] 
+  }
 
-// changeEmail(user)
+  newObj.friends.push(6)
+  return newObj
+}
 
-// console.log(user);
+const newUser = changeEmail(user)
+// eric@gmail.com
+console.log(user);
+// not-eric@gmail.com
+console.log(newUser);
 
+const newerUser = addFriend(user)
 
-// let user = {
-//   email: 'eric@gmail.com',
-//   friends: [1,2,3,4,5,6]
-// }
-
-// console.log(user);
-
-// const changeEmail = (user) => {
-//   user = {...user}
-//   user.email = 'not-eric@gmail.com'
-// }
-
-// const addFriend = (user) => {
-//   user = {...user}
-//   user.friends.push(7)
-// }
-
-// changeEmail(user)
-// console.log(user);
-
-
-// addFriend(user)
-// console.log(user);
+console.log(user);
+console.log(newerUser);
 
 
 
-// const user = {
-//   email: 'eric@gmail.com'
-// }
 
-// user.email = 'asedfdsafsadfs'
+
+
+
+
+
+
+

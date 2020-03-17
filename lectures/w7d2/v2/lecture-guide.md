@@ -1,7 +1,5 @@
 # Bobby uno's question
 
-- what is a ui 
-- it is a way 
 # What problem does react solve
 
 - building complex interactive ui's
@@ -46,9 +44,11 @@ You can quicky compare the previous and the new version
 
 - state acts as a cache 
 - we use it to stay in sync with server data etc
+- explicit state updates*** demo
+
+- what is ui. a way for the user to interact with your application... The power very often lies in the data
 - In a perfect world we would always have state stored in 1 source of truth , that way we dont have to keep it in sync 
 
-- explicit state updates*** demo
 
 # single page applications 
 

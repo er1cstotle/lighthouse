@@ -4,6 +4,11 @@ import './App.css';
 
 function App() {
   const [count, setCount] = useState(0)
+  const [pizzaToppings, setPizzaToppings] = useState(['cheese', 'pineapple', 'ham'])
+
+  const addBacon = () => {
+    setPizzaToppings([...pizzaToppings, 'bacon'])
+  }
 
   const increment = () => {
     setCount(count + 1)
@@ -11,22 +16,18 @@ function App() {
 
   const decrement = () => {
     setTimeout(() => {
-      setCount(count - 1)
+      setCount((prev) => prev - 1)
     }, 2000);
   }
 
   return (
     <div className="App">
-      <p>{count}</p>
-
-      <button onClick={increment}>
-        increment
-      </button>
-
-      <button onClick={decrement}>
-        decrement
-      </button>
-
+      <div>
+        {pizzaToppings.map((topping) => (
+          <p>{topping}</p>
+        ))}
+      </div>
+      <button onClick={addBacon}>add Bacon for $3.50</button>
     </div>
   );
 }
