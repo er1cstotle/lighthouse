@@ -68,14 +68,12 @@ app.get('/signup', (req, res) => {
 
 // AUTH POST ROUTES
 app.post('/login', (req, res) => {
-  console.log(req.body);
   const { username, password } = req.body;
   // The above is same as doing this ...
   // const username = req.body.username;
   // const password = req.body.password;
 
   const user = users[username];
-  console.log(user);
 
   if (user && user.password === password) {
     // SUCCESS - provided correct crendentials!
@@ -92,21 +90,13 @@ app.post('/login', (req, res) => {
 
 // AUTH POST ROUTES
 app.post('/signup', (req, res) => {
-  console.log(req.body);
   const { username, password } = req.body;
-  // The above is same as doing this ...
-  // const username = req.body.username;
-  // const password = req.body.password;
-
-  const user = users[username];
-  console.log(user);
 
   bcrypt.genSalt(10, function(err, salt) {
-    console.log(salt);
-
     bcrypt.hash(password, salt, function(err, hash) {
-      // Store hash in your password DB.
-      console.log(hash);
+
+      // save user
+      users[username] = {username, password: hash}
       
       return res.redirect('/signup');
     });
