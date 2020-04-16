@@ -1,6 +1,3 @@
-other lecture security: https://www.youtube.com/watch?v=hE4qMwVW_UU&feature=emb_title 
-other lecture real world servers: https://www.youtube.com/watch?v=n9GvRJgfzgs&feature=emb_title 
-
 code sample 1: https://github.com/er1cstotle/lighthouse/tree/master/lectures/w3d4/v2/example-security
 code sample 2: https://github.com/er1cstotle/lighthouse/tree/master/lectures/w3d4/v2/example-rest
 
@@ -27,7 +24,7 @@ cookie-session is a npm package that encrypts cookies for us!!!
 - salts are a unique strings that appended to passwords before hashing
 - salts help prevent calculated dictionary/rainbow table attacks
 
-simple hashing function
+worlds worst hashing function
 ```
 const hash = (input) => {
   const obj = {
@@ -53,13 +50,6 @@ But Carol is secretly intercepting and delivering the messages.
 Alice <->  Carol <-> Bob
 
 We can alleviate the dangers of this if we encrypt the messages so that Carol cannot read them
-
-
-# Server side sessions
-- It is possible to track sessions on the server side.
-- useful if you want more control over the sessions. Like being able to log a user out of all their devices
-- it also does not have a size limit like browser cookies
-
 
 # REST
 - It stands for representational state transfer 
@@ -98,6 +88,30 @@ DELETE GET /posts/:id/comments/:id
 - We can use express routers to break out routes into seperate modules so server.js does not get massive.
 
 # middleware 
+
+- we looked at create a common user auth middleware
+
+
+# alternatives to express
+
+js web server alternative 
+
+- koa
+- sails 
+- hapi 
+
+Ruby
+
+- Rails 
+- Sinatra
+- Hanami
+
+Python 
+
+- Django 
+- Flask 
+
+Graphql 
 
 ### Links
 

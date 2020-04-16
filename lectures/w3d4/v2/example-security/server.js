@@ -4,12 +4,26 @@ const PORT = process.env.PORT || 8000; // default port 8080
 
 // Use cookies!
 const cookieParser = require('cookie-parser');
+var cookieSession = require('cookie-session')
+
+const bcrypt = require('bcrypt');
+
 const bodyParser   = require('body-parser');
 
 // logging to STDOUT
 // const morgan = require('morgan');
 
-app.use(cookieParser());
+// app.use(cookieParser());
+
+const saltRounds = 10;
+
+app.use(cookieSession({
+  name: 'session',
+  keys: ['keysnsdjkfnk'],
+
+  // Cookie Options
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}))
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -34,14 +48,14 @@ app.get("/", (req, res) => {
 // Any user can view the treasure (as long as you are logged in)
 app.get("/treasure", (req, res) => {
   // CHECK IF THE USER IS AUTHENTICATED
-  const username = req.cookies.username // if undefined, they are not logged in
+  const username = req.session.username // if undefined, they are not logged in
+  
   if (username && users[username]) {
     // assume logged in
     res.render("treasure", { user: users[username] });
   } else {
     res.status(403).send('ACCESS NOT ALLOWED');
   }
-  
 });
 
 // FORMS FOR AUTENTICATION
@@ -62,15 +76,18 @@ app.post('/login', (req, res) => {
 
   const user = users[username];
 
-  if (user && user.password === password) {
-    // SUCCESS - provided correct crendentials!
-    res.cookie('username', username)
+  console.log(user);
+  
 
-    res.redirect('/');
-  } else {
-    // FAIL - either the user was not found, or it was but the password didnt match
+  bcrypt.compare(password, user.password, function(err, result) {
+    if(result) {
+      req.session.username = username
+      return res.redirect('/');
+    }
+
     res.send('FAIL');
-  }
+    // result == true
+  });
 });
 
 
@@ -78,9 +95,20 @@ app.post('/login', (req, res) => {
 app.post('/signup', (req, res) => {
   const { username, password } = req.body;
 
-  users[username] = {username, password: password}
 
-  return res.redirect('/');
+  bcrypt.genSalt(10, function(err, salt) {
+
+    bcrypt.hash(password, salt, function(err, hash) {          
+      users[username] = {username, password: hash}
+    
+      return res.redirect('/');
+      // Store hash in your password DB.
+    });
+
+  });
+
+
+
 });
 
 
