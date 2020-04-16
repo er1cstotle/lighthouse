@@ -1,0 +1,43 @@
+// Implement a forEach which can be flexible enough to do whatever we want for each item in the given array. In other words: re-implement our own version of forEach.
+
+// Also, include an example of the function being called/used.
+
+// code below here
+
+const forEach = (array, cb) => {
+  for (let i = 0; i < array.length; i++) {
+    cb(array[i])
+  }
+}
+
+forEach([1,2,3], (i) => {
+  console.log(i)
+})
+
+forEach([1,2,3], (i) => {
+  console.log(i + 1)
+})
+
+
+4 ) Build a function called keysMatch() which will be given two objects and an array of strings.
+
+It will use the strings to look up the key-value pair in each object and compare the values. If all the values are explicitly equal to each other, return true, otherwise return false.
+
+We can start with the following function definition:
+
+const keysMatch = function(obj1, obj2, keys) {
+  for( let i = 0; i < keys.length; i++) {
+    const key = keys[i]
+    if (obj1[key] !== obj2[key]){
+      return false;
+    }
+  }
+    
+  return true;
+};
+
+
+// reasonable test code:
+keysMatch({a: 1, b: 2}, {a: 1}, ['a']); // => true
+keysMatch({a: 1, b: 2}, {a: 1}, ['a', 'c']); // => true
+keysMatch({a: 1, b: 2}, {a: 1}, ['b', 'a']); // => false

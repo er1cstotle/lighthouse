@@ -12,9 +12,6 @@ const bodyParser   = require('body-parser');
 // logging to STDOUT
 const morgan = require('morgan');
 
-const userRoutes = require('./routes/users')
-const postRoutes = require('./routes/posts')
-
 // app.use(cookieParser());
 const users = {
   el: {username: 'el', password: '123'}
@@ -31,9 +28,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(morgan('combined'))
 app.set("view engine", "ejs");
 
-app.use('/users', userRoutes(users))
 
-app.use('/posts', postRoutes)
+app.get('/users', (req, res) => {
+  res.send('USERSSSSSS')
+})
+
+app.put('/users', (req, res) => {
+  res.send('puuuttt')
+})
+
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}!`);

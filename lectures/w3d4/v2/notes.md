@@ -1,3 +1,8 @@
+other lecture security: https://www.youtube.com/watch?v=hE4qMwVW_UU&feature=emb_title 
+other lecture real world servers: https://www.youtube.com/watch?v=n9GvRJgfzgs&feature=emb_title 
+
+code sample 1: https://github.com/er1cstotle/lighthouse/tree/master/lectures/w3d4/v2/example-security
+code sample 2: https://github.com/er1cstotle/lighthouse/tree/master/lectures/w3d4/v2/example-rest
 
 # Secure cookies
 
@@ -7,10 +12,9 @@
 
 if we shift every letter in the alphabet by 1
 ```
-abcdefg ... z
-bcdefgz
-
-password -> qbttxpse
+Cleartext:        A    P    P    L    E
+Key:              4    4    4    4    4
+Ciphertext:       E    T    T    P    I
 ```
 
 cookie-session is a npm package that encrypts cookies for us!!! 
@@ -23,10 +27,33 @@ cookie-session is a npm package that encrypts cookies for us!!!
 - salts are a unique strings that appended to passwords before hashing
 - salts help prevent calculated dictionary/rainbow table attacks
 
+simple hashing function
+```
+const hash = (input) => {
+  const obj = {
+    'eric': 1,
+    'apple': 2,
+    'akj239df: 3
+  }
+
+  return obj[input]
+}
+```
+
 # Secure http
 
 - HTTPS uses Transport Layer Security (TLS) to encrypt communication between client and server
 - it helps defend against man in the middle attacks
+
+Alice wants to talk to bob:
+
+Alice <-> Bob 
+
+But Carol is secretly intercepting and delivering the messages. 
+Alice <->  Carol <-> Bob
+
+We can alleviate the dangers of this if we encrypt the messages so that Carol cannot read them
+
 
 # Server side sessions
 - It is possible to track sessions on the server side.
@@ -35,9 +62,9 @@ cookie-session is a npm package that encrypts cookies for us!!!
 
 
 # REST
-- representational state transfer 
-- a convention that encourages resource based routing
-- Https methods express what you want to do, PATH express what you want to do it o
+- It stands for representational state transfer 
+- a software architectural style(convention) that encourages resource based routing
+- **Https** methods express what you want to do and a **PATH** express what you want to do it
 
 refresher on CRUD 
 
@@ -47,7 +74,6 @@ Update --> PUT
 Destroy --> DELETE
 
 ```
-GET /users/new
 GET /users
 GET /users/:id
 POST /users
@@ -70,6 +96,8 @@ DELETE GET /posts/:id/comments/:id
 # breaking an express app into modules
 
 - We can use express routers to break out routes into seperate modules so server.js does not get massive.
+
+# middleware 
 
 ### Links
 

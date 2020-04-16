@@ -12,14 +12,14 @@
 
 # Secure passwords
 
-- why not plain text
-- if your database is compromised the hackers have access to everyones account
-- hashing
-- rainbow table
-- one way. if you have the result you cannot reverse it
-- salts!
+- why not plain text??? if your database is compromised the hackers have access to everyones account
+- solution: hashing
+- these are a one way street. if you have the result you cannot reverse engineer it to get the input
 - dont use your own hashing function....
 - the ones commonly used are battle tested by cyber security 
+
+- Rainbow table attacks
+- partial solution: salts!
 
 # Secure http
 
@@ -27,17 +27,7 @@
 - firesheep
 - how to secure the data that you send over the network
 
-HTTPS uses Transport Layer Security (TLS) to encrypt communication between client and server
-Encrypted using asymmetric cryptography which uses a public key and private key system
-The public key is available to anyone who wants it and is used to encrypt the communication
-The private key is known only to the receiver and is used to decrypt the communication
-
-# Server-side sessions
-
-- store sessions on the server... in a db or a cache of some sort
-- no limit on size
-- more secure
-- control to invalidate someones session
+-  Imitation Game, Enigma
 
 # Security summary
 Summary:
@@ -45,13 +35,16 @@ Summary:
 When to use...
 plain cookies:
 almost never use plain cookies
+
 maybe for:
 language selection
 shopping cart for non-logged in users
 analytics
+
 encrypted cookies:
 do this by default
 only store user_id (rest can go in database)
+
 server-side sessions
 not worth hassle for small projects
 if you need to store lots of session data

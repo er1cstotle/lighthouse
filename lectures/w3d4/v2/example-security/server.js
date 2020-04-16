@@ -2,25 +2,14 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 8000; // default port 8080
 
-const bcrypt = require('bcrypt');
-
 // Use cookies!
-const cookieSession = require('cookie-session')
-// const cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 
 // logging to STDOUT
-const morgan = require('morgan');
+// const morgan = require('morgan');
 
-// app.use(cookieParser());
-
-app.use(cookieSession({
-  name: 'session',
-  keys: ['cookie-monster'],
-
-  // Cookie Options
-  maxAge: 24 * 60 * 60 * 1000 // 24 hours
-}))
+app.use(cookieParser());
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -39,13 +28,11 @@ const users = {
 
 // ROUTES
 app.get("/", (req, res) => {
-  console.log(req.session);
   res.render('home');
 });
 
 // Any user can view the treasure (as long as you are logged in)
 app.get("/treasure", (req, res) => {
-  
   // CHECK IF THE USER IS AUTHENTICATED
   const username = req.cookies.username // if undefined, they are not logged in
   if (username && users[username]) {
@@ -77,8 +64,7 @@ app.post('/login', (req, res) => {
 
   if (user && user.password === password) {
     // SUCCESS - provided correct crendentials!
-    // res.send('SUCCESS');
-    req.session.username = username
+    res.cookie('username', username)
 
     res.redirect('/');
   } else {
@@ -92,15 +78,9 @@ app.post('/login', (req, res) => {
 app.post('/signup', (req, res) => {
   const { username, password } = req.body;
 
-  bcrypt.genSalt(10, function(err, salt) {
-    bcrypt.hash(password, salt, function(err, hash) {
+  users[username] = {username, password: password}
 
-      // save user
-      users[username] = {username, password: hash}
-      
-      return res.redirect('/signup');
-    });
-  })
+  return res.redirect('/');
 });
 
 
