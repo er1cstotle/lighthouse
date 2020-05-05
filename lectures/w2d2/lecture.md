@@ -1,26 +1,24 @@
+# w2d2 Asynchronous programming
+
 # Intro 5min 
 
-# Review 20m
+# Review functions 20m
 
 # Async vs Sync 20m
 
-# event loop 10m
+### blocking non blocking
+### analogy to restaurant
+### Node vs Javascript
+### setTimeout + callbacks
+### examples
 
 # Break 10m
 
+# more examples
 # What are some async things
-- interacting with the filesystem 
-- talking to a database 
-- fetching data from an api 
-- timeouts 
-
-- respond to "events"
-- animations 
-
 
 # Node FS 10m
-
-# user input 15m
+# Events and user input 15m
 
 
 

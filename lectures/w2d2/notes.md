@@ -1,36 +1,6 @@
-# 1. Functions Review
+# Async vs Sync 
 
-### Question: What is a function
-
-Answer: 
-- a reusable chunk of code that takes an input(or not) and produces and output
-- they are objects, and they can be used as values
-- declarations vs expression
-  - expressions are not hoisted
-
-### Question What is a callback?
-
-Answer:
-A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
-
-### Question: What is a higher order function?
-
-Answer:
-1. a function that takes another function as a parameter
-2. or a function that returns another function
-3. or both
-
-### What is the difference between Node and Javascript?
-
-javascript is an language
-node is a runtime environment for javascript
-
-
-# 2. Async vs Sync 20m
-
-## Javascript is asynchronous
-
-Restaurant example
+### Restaurant as an analogy 
 >A synchronous waiter would take an order from a customer deliver it to the cooks and then wait for the food to finish before taking another order.
 
 >A more typical waiter is asynchronous. They take a customers order, deliver it to the chef then continue to take orders until the food finishes, at which point they give the meal to the customer.
@@ -42,6 +12,16 @@ Restaurant example
 - synchronous code is blocking
 - asynchronous code is non-blocking
 
+### What is the difference between Node and Javascript?
+
+javascript is an language
+node is a runtime environment for javascript
+
+### Event loop 
+
+- This is not a topic for today but I thought it important to touch on quickly
+- The event loop is what enables Javascript's asynchronous behavior
+- The loop pulls things out of the event queue and runs the task then goes back to the queue and runs the next task etc...
 
 ### JS examples
 
@@ -53,19 +33,15 @@ both of these functions are asyncronous
 - they both use the callback pattern to implement the async behaviour. 
 - it is important to note that NOT all callbacks are async.
 
-### I/O
+### What are some things that can be handled asynchronously 
 
-- This is one thing that node typically handle async. It is one of those non-javascript operations I referred to above
-- short for input/output. Typically used to discuss when a program is communicating with "the outside world" perhaps an external data source like a database
+- Talking to a database
+- Talking to an api
+- reading a from the file system
+- listening for user input
+- setTimeout & setInterval
 
-### Event loop 
-
-- This is not a topic for today but I thought it important to touch on quickly
-- The event loop is what enables Javascript's asynchronous behavior
-- The loop pulls things out of the event queue and runs the task then goes back to the queue and runs the next task etc...
-
-
-# 3. FS 10m
+# Reading from the file system
 
 quick notes:
 - `FS` is a package built into node. You can require it in any node program without needing to install anything extra
@@ -76,7 +52,7 @@ quick notes:
 
 - today we looked at `fs.readfile`
 
-# 4. stdin and events / listeners
+# stdin and events / listeners
 - in our final code example we looked at how we can write a program that waits for input from the user
 - we saw that the event listener is async
 

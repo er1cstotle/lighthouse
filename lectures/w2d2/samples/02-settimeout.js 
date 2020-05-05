@@ -1,0 +1,9 @@
+console.log('I will be console logged first');
+
+
+setTimeout(() => {
+  console.log('i will be console logged third');
+}, 1000);
+
+
+console.log('I will be console logged second');
