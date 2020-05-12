@@ -1,3 +1,14 @@
+Aloha crew!
+
+Thank you for coming to lecture today. Here are some notes on the key takeaways
+
+Meeting Recording:
+https://us02web.zoom.us/rec/share/9ddXLoDXqWhLE4GVs32HYfceBYrBX6a81nQdqfZenUccdDPo7NEsRQFWvsWK28An
+
+Access Password: 9q+@s^e3
+
+Code samples: https://github.com/er1cstotle/lighthouse/tree/master/lectures/w2d2/samples
+
 # Async vs Sync 
 
 ### Restaurant as an analogy 
