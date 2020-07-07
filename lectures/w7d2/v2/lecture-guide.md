@@ -2,13 +2,17 @@
 
 - building complex interactive ui's
 - A big way it does this is through how react handles state.
+- unidirectional data 
+- boiling react down to a few lines of jquery
 
 # state review
+- similarity to functions 
+- basic prop names
+- onclick needs a function just like map needs a call back
 - props vs state
 - Parent vs child
 - react function of state 
-- explicit state updates
-- boiling react down to a few lines of jquery
+
 
 # Intro to immutable data 
 
@@ -40,7 +44,8 @@ You can quicky compare the previous and the new version
 # Hooks review 5min
 
 # React + Immutable data
-
+- unidirectional data 
+- explicit state updates
 - state acts as a cache 
 - we use it to stay in sync with server data etc
 
